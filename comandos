@@ -8,4 +8,7 @@ npm install morgan@1.9.0 --save
 //instalar body-parser
 npm install body-parser@1.18.3 --save
 
+//instalar express-generator
+npm install express-generator@4.16.0 -g
 
+express nombre_api_rest
