@@ -5,3 +5,7 @@ npm install express@4.16.3 --save
 //instalar morgan
 npm install morgan@1.9.0 --save
 
+//instalar body-parser
+npm install body-parser@1.18.3 --save
+
+
