@@ -1,0 +1,31 @@
+//ingresar desde docker
+sudo docker-compose up 
+
+sudo docker exec -it mongobd bash
+
+sudo rm -r mongodb 
+
+docker rm -f $(docker ps -aq)
+----------------------------------------------------------
+
+//mongod --dbpath=data --bind_ip 127.0.0.1
+//ingresar a mongo
+mongo --username root --password
+mongo -u root -p example
+
+//ver base de datos actual
+db
+//cambia de base de datos
+use nombre_base_de_datos
+
+//insertar un registro
+db.dishes.insert({ name: "Frijoles", description: "Test" });
+
+//consultar
+db.dishes.find().pretty();
+
+var id = new ObjectId();
+id.getTimestamp();
+
+
+
