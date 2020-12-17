@@ -15,17 +15,24 @@ mongo -u root -p example
 
 //ver base de datos actual
 db
-//cambia de base de datos
+--cambia de base de datos
 use nombre_base_de_datos
 
-//insertar un registro
+--insertar un registro
 db.dishes.insert({ name: "Frijoles", description: "Test" });
 
-//consultar
+--consultar
 db.dishes.find().pretty();
 
 var id = new ObjectId();
 id.getTimestamp();
 
-
-
+--crear usuario admin para evitar conflictos de permisos
+use admin
+db.createUser(
+  {
+    user: "root",
+    pwd: "examle",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
+  }
+)
