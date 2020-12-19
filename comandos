@@ -24,3 +24,7 @@ npm install mongoose@5.1.7 mongoose-currency@0.2.0 --save
 //instalar cookie parser
 npm install cookie-parser@1.4.3 --save
 
+//session
+npm install express-session@1.15.6 session-file-store@1.2.0 --save
+
+
