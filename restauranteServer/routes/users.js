@@ -10,9 +10,7 @@ router.use(bodyParser.json());
 
 /* GET users listing. */
 router.route('/')
-.get(authenticate.verifyUser, (req,res,next) => {
-  const isAdmin= authenticate.verifyAdmin(req.user);
-  if(isAdmin){
+.get(authenticate.verifyUser, authenticate.verifyAdmin, (req,res,next) => {
     User.find({})
     .then((users) => {
         res.statusCode = 200;
@@ -20,11 +18,6 @@ router.route('/')
         res.json(users);
     }, (err) => next(err))
     .catch((err) => next(err));
-  }else{
-    var err = new Error('You are not authorized to perform this operation!');
-    err.status = 403;
-    next(err);
-  } 
 });
 
 router.post('/signup', (req, res, next) => {
