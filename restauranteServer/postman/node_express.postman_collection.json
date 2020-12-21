@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "66412b6e-a319-4ec7-8a8a-61f842fcf9d4",
+		"name": "node_express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginfacebook",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "EAAB7EaLw91EBALHy0ZACMy4EhjaLnLGm052SYwMoV70uZBgxZBcW8LQimHhFZBXP9xODN08dbfJNIXhfYiB9ez3t8Ka5hj2VWFlbO9fRFZB4EKqf9wgFc1HMeiLi8H3SvwAJZCo9QZBaXxlGqQKvlZCvm3eNyG1cSClij7upGFN58ZBUa3G5HxBqZBjFCKHiS7h1UZD",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:3443/users/facebook/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3443",
+					"path": [
+						"users",
+						"facebook",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"admin\",\n\"password\":\"12345\",\n\"firstname\":\"alberto\",\n\"lastname\":\"baquero\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmRmNTlkOTk5MDliZjFlZjM5ZTMzMTciLCJpYXQiOjE2MDg0ODU0NDAsImV4cCI6MTYwODQ4OTA0MH0.JZ48txe9hjU-3V5VTh5kRprwkUAlIWYHk5TuW6v9M7I",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dishes",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmRmNTlkOTk5MDliZjFlZjM5ZTMzMTciLCJpYXQiOjE2MDg1NTM5MTQsImV4cCI6MTYwODU1NzUxNH0.tTU-twnocOIcQ9V5bvfR99cNNru1JuiKSsk8N5bWK5U",
+						"type": "text"
+					},
+					{
+						"key": "Origin",
+						"value": "https://localhost:3443",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"name\": \"Uthappizza3\",\n      \"image\": \"images/uthappizza.png\",\n      \"category\": \"mains\",\n      \"label\": \"Hot\",\n      \"price\": \"4.99\",\n      \"featured\": \"true\",\n      \"description\": \"A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.\",\n      \"comments\": [\n      ]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/dishes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "favorites",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmUxMTYwZTExOTBlOTI3OGQ4MjJmNDMiLCJpYXQiOjE2MDg1ODk1NTksImV4cCI6MTYwODU5MzE1OX0.MPZMnUDT1eFyvyy2ohZPicfXNJiDsWFL7F-XJtJuDXI"
+					},
+					{
+						"key": "Origin",
+						"type": "text",
+						"value": "https://localhost:3443"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"dishes\": [{\"_id\":\"5fe11a881190e9278d822f47\"}, {\"_id\":\"5fe11ab61190e9278d822f4e\"}] \n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/favorites",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "options",
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://localhost:3443",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:3443/dishes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3443",
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dishComments",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmRmNTk5Njk5MDliZjFlZjM5ZTMzMTYiLCJpYXQiOjE2MDg0ODE5MTYsImV4cCI6MTYwODQ4NTUxNn0.gplZT140hZwwA_9o5INbr5gFBvhlEarhNWoxqR2RCtc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n          \"rating\": 5,\n          \"comment\": \"Imagine all the eatables, living in conFusion!\"\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/dishes/5fdf5422bf2150192ffb3be9/comments/5fdf5566bf2150192ffb3bea",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dishes",
+						"5fdf5422bf2150192ffb3be9",
+						"comments",
+						"5fdf5566bf2150192ffb3bea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadImage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmRmNTlkOTk5MDliZjFlZjM5ZTMzMTciLCJpYXQiOjE2MDg1MjA5NTksImV4cCI6MTYwODUyNDU1OX0.lHiMNfVw_pibqZh32K3cdMr6ueqciKEvr2NhiKrRiKM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imageFile",
+							"type": "file",
+							"src": "/home/cguzman/Descargas/images/kartman.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/imageUpload/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"imageUpload",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
